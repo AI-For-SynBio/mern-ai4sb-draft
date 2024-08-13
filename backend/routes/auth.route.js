@@ -3,8 +3,6 @@ import passport from 'passport';
 
 const router = express.Router();
 
-// form submission
-
 router.get("/github", passport.authenticate('github', { scope: [ 'user:email' ] }),)
 router.get("/github/callback" , 
     passport.authenticate('github', { failureRedirect: process.env.CLIENT_BASE_URL + '/login' }),
